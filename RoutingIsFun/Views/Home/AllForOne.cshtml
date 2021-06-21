@@ -1,0 +1,9 @@
+﻿@{
+
+}
+
+<h1>The One View to Rule Them All</h1>
+@foreach (var property in ViewBag.Properties)
+            {
+                <p><b>@property.Key:</b> @property.Value</p>
+            }
