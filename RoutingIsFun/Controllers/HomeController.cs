@@ -124,6 +124,98 @@ namespace RoutingIsFun.Controllers
             return View("AllForOne");
         }
 
+        [Route("{language}/powerapps/maker/{app}")]
+        public IActionResult PowerAppsMaker(string language, string app)
+        {
+            List<KeyValuePair<string, string>> properties = new List<KeyValuePair<string, string>>()
+            {
+                new KeyValuePair<string, string>("language", language),
+                new KeyValuePair<string, string>("app", app),
+            };
+
+            ViewBag.Properties = properties;
+
+            return View("AllForOne");
+        }
+
+        [Route("main")]
+        public IActionResult DynamicsMain(string app, string pageType, string id, string type)
+        {
+            List<KeyValuePair<string, string>> properties = new List<KeyValuePair<string, string>>()
+            {
+                new KeyValuePair<string, string>("app", app),
+                new KeyValuePair<string, string>("pageType", pageType),
+                new KeyValuePair<string, string>("id", id),
+                new KeyValuePair<string, string>("type", type)
+
+            };
+
+            ViewBag.Properties = properties;
+
+            return View("AllForOne");
+        }
+
+        [Route("manage/{siteArea}/{id}/{powerApp}/{powerAppId}/details")]
+        public IActionResult ShowDetails(string siteArea, string id, string powerApp, string powerAppId)
+        {
+            List<KeyValuePair<string, string>> properties = new List<KeyValuePair<string, string>>()
+            {
+                new KeyValuePair<string, string>("siteArea", siteArea),
+                new KeyValuePair<string, string>("id", id),
+                new KeyValuePair<string, string>("powerApp", powerApp),
+                new KeyValuePair<string, string>("powerAppId", powerAppId)
+            };
+
+            ViewBag.Properties = properties;
+
+            return View("AllForOne");
+        }
+
+        [Route("environments/{environmentName}/{id}/hub")]
+        public IActionResult ShowDetails(string environmentName, string id, string geo)
+        {
+            List<KeyValuePair<string, string>> properties = new List<KeyValuePair<string, string>>()
+            {
+                new KeyValuePair<string, string>("environmentName", environmentName),
+                new KeyValuePair<string, string>("id", id),
+                new KeyValuePair<string, string>("geo", geo),
+            };
+
+            ViewBag.Properties = properties;
+
+            return View("AllForOne");
+        }
+
+        [Route("{language}/pdp")]
+        public IActionResult PeopleDoPhonics(string language, string id)
+        {
+            List<KeyValuePair<string, string>> properties = new List<KeyValuePair<string, string>>()
+            {
+                new KeyValuePair<string, string>("language", language),
+                new KeyValuePair<string, string>("id", id)
+            };
+
+            ViewBag.Properties = properties;
+
+            return View("AllForOne");
+        }
+
+        [Route("{year}/{month}/{day}/{title}")]
+        public IActionResult OtherNews(string year, string month, string day, string title)
+        {
+            List<KeyValuePair<string, string>> properties = new List<KeyValuePair<string, string>>()
+            {
+                new KeyValuePair<string, string>("year", year),
+                new KeyValuePair<string, string>("month", month),
+                new KeyValuePair<string, string>("day", day),
+                new KeyValuePair<string, string>("title", title)
+            };
+
+            ViewBag.Properties = properties;
+
+            return View("AllForOne");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
